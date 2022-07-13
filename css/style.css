@@ -1,0 +1,248 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/*header*/
+
+nav {
+    display: flex;
+    width: 100%;
+    background-color: #eee;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10px;
+    height: 100px;
+}
+
+nav ul {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    transition: .3s;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav-link:hover {
+    color: #eee;
+    background-color: #000;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+
+
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.905)), url(../assets/hero.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100%;
+    padding: 30px;
+
+
+}
+
+
+.hero h1 {
+    color: #eee;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hero h1 span {
+    color: rgb(255, 0, 0);
+    ;
+}
+
+.hero button {
+    width: 250px;
+    align-items: center;
+    padding: 10px;
+    align-self: flex-start;
+}
+
+/*about*/
+
+.about__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.about__info img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.about__content {
+    padding: 30px;
+}
+
+
+/*products*/
+
+.products {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 'prod1 prod3 prod4 prod4'
+                         'prod2 prod3 prod4 prod4'
+                         'prod2 prod5 prod5 prod5';
+    background-color: rgb(81, 0, 255);
+    gap: 5px;
+    padding: 5px;
+    
+}
+
+.prod1 {
+    grid-area: prod1;
+}
+
+.prod2 {
+    grid-area: prod2;
+}
+
+.prod3 {
+    grid-area: prod3;
+}
+
+.prod4 {
+    grid-area: prod4;
+}
+
+.prod5 {
+    grid-area: prod5;
+}
+
+
+
+.products__content {
+    background-color: #ffff;
+    border-radius: 3px;
+    height: 100%;
+}
+
+.products__content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s;
+    filter: grayscale(100%);
+}
+
+.products__content img:hover{
+    filter: grayscale(0);
+
+}
+
+
+
+/*footer*/
+
+footer {
+    text-align: center;
+    padding: 30px;
+    
+}
+
+.prod2 img{
+   height: 1000px;
+}
+
+
+@media only screen and (min-width:900px) and (max-width:1024px){
+
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 'prod5 prod3 prod1 '
+                             'prod2 prod3 prod1 '
+                             'prod2 prod4 prod4 ';
+                             
+        
+    }
+
+}
+
+@media only screen and (min-width:480px) and (max-width:899px){
+    .hero button {
+        align-self: center;
+    }
+    .about__info {
+        flex-direction: column;      
+    }
+    .about__info img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 'prod1 prod3'
+                             'prod2 prod3'
+                             'prod2 prod4'
+                             'prod5 prod4';
+
+       
+        
+    }
+
+}
+
+
+@media only screen and (min-width:300px) and (max-width:479px){
+
+    nav {
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+   
+    nav ul li {
+        padding: 25px;
+    }
+    .hero button {
+        align-self: center;
+    }
+    .about__info {
+        flex-direction: column;      
+    }
+    .about__info img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .products {
+        display: flex;
+        flex-direction: column;       
+    
+    }
+
+}
